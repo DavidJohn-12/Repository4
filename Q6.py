@@ -12,7 +12,6 @@ X_test = X_test / 255.0
 # Reshape
 X_train = X_train.reshape(-1, 28, 28, 1)
 X_test = X_test.reshape(-1, 28, 28, 1)
-
 # Build CNN
 model = Sequential()
 
