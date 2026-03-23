@@ -24,20 +24,9 @@ model.add(Dense(1, activation='sigmoid'))
 model.compile(loss='binary_crossentropy', metrics=['accuracy'])
 
 model.fit(X_train_scaled, y_train, epochs=20)
-'''
-print("Train accuracy:", model.evaluate(X_train_scaled, y_train)[1])
-print("Test accuracy:", model.evaluate(X_test_scaled, y_test)[1])
 
-# COMMENTS:
-# Feature scaling is needed because neural networks work better when input values are in a similar range.
-# An epoch is one full pass through the training dataset.
-'''
 
-from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
-from sklearn . datasets import load_breast_cancer
-
-data = load_breast_cancer()
 
 
 model2 = DecisionTreeClassifier(criterion="entropy")
@@ -61,10 +50,14 @@ y_pred_nn = (y_pred_nn > 0.5)
 print("Neural Network Confusion Matrix:")
 print(confusion_matrix(y_test, y_pred_nn))
 
+
 # I prefer the Neural Network because it usually gives better accuracy.
+
+
 # Decision Tree:
 # Advantage: easy to understand because you can visualize
 # Limitation: prone to overfitting
+
 
 # Neural Network:
 # Advantage: more powerful and accurate
